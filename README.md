@@ -1,4 +1,4 @@
-# Behat Selenium TEST
+# Behat Zalenium TEST
 
 :warning: You must have docker installed if you want execute test on your local environment.
 
