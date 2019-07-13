@@ -1,4 +1,11 @@
 # Behat Zalenium TEST
+ref: 
+1. https://github.com/kamal2222ahmed/behat-selenium
+2. https://opensource.zalando.com/zalenium/
+3. https://runnable.com/docker/getting-started/
+4. https://github.com/edmondscommerce/behat-zalenium-context
+5. https://www.edmondscommerce.co.uk/handbook/Development-Tools/Testing/Zalenium/
+
 
 :warning: You must have docker installed if you want execute test on your local environment.
 
