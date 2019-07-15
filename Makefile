@@ -1,5 +1,5 @@
 up: docker-compose.yml
-	docker-compose up -d application selenium
+	docker-compose up -d application zalenium
 .PHONY: up
 
 start: up

@@ -6,4 +6,4 @@ default:
             browser_name: chrome
             javascript_session: selenium2
             selenium2:
-                wd_host: http://selenium:4444/wd/hub
+                wd_host: http://localhost:4444/wd/hub

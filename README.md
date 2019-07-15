@@ -5,6 +5,8 @@ ref:
 3. https://runnable.com/docker/getting-started/
 4. https://github.com/edmondscommerce/behat-zalenium-context
 5. https://www.edmondscommerce.co.uk/handbook/Development-Tools/Testing/Zalenium/
+6. http://localhost:4444/wd/hub
+7. http://localhost:4444/grid/admin/live
 
 
 :warning: You must have docker installed if you want execute test on your local environment.
