@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+
+  zalenium:
+    image: repo.forge.lmig.com/docker/dosel/zalenium
+    container_name: zalenium
+    depends_on:
+       - selenium
+       - dep
+
+    ports:
+      - "4444:4444"
+    restart: unless-stopped
+    tty: true
+    command: ["start", "--desiredContainers", "5", "--maxDockerSeleniumContainers", "10","--sauceLabsEnabled","false","--screenWidth", "1920", "--screenHeight", "1080"]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /Users/goutham/git/selenium-tests/test-output/videos:/home/seluser/videos
+    privileged: true   
+    networks:
+      mynetwork:
+        aliases:
+          - chrome
+
+  dep:
+      image: elgalu/selenium
+      command:  echo 0
+      restart: "no"
+
+  selenium-tests: 
+    image: selenium-tests:latest
+    container_name: selenium-tests-container      
+    depends_on:
+      - zalenium
+    networks:
+      mynetwork:  
+    volumes:
+     - /Users/goutham/git/selenium-tests/test-output:/test-output
+
+networks:
+  mynetwork:
+    driver: bridge

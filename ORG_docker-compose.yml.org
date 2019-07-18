@@ -1,0 +1,32 @@
+version: "2"
+
+services:
+  application:
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/app
+      - ./scripts/nginx.conf:/etc/nginx/nginx.conf
+
+  selenium:
+    image: elgalu/selenium
+    container_name: selenium
+ 
+  zalenium:
+    image: dosel/zalenium
+    hostname: zelenium
+    container_name: zelenium
+    ports:
+      - 4444:4444
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/videos:/home/seluser/videos
+    privileged: true
+    command:  start
+
+  behat-homepage:
+    image: php:7.0-cli
+    volumes:
+      - .:/app
+    command: /app/vendor/bin/behat -c /app/behat.yml --colors
