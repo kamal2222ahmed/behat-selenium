@@ -50,3 +50,18 @@ run the next command.
 $ make purge
 ```
 
+=============== For Demo with Selenium using Python:
+
+1. cd to repo git@github.com:kamal2222ahmed/behat-selenium.git
+
+2. docker-compose up -d
+
+3. cd to repo https://github.com/testdrivenio/selenium-grid-docker-swarm.git
+
+4. $ for i in {1..8}; do {
+          python project/script.py ${i} &
+        };
+        done
+
+Observe the parallel selenium tests running at http://localhost:4444/grid/console
+
